@@ -2,9 +2,7 @@
 cpp-json-testcase-runner
 # C++ JSON Test Case Runner
 
-This project demonstrates how to parse and execute test cases written in JSON format using C++.  
-It uses the **nlohmann/json** library to handle JSON parsing and provides a framework for running, validating, and displaying results of structured test cases.
-
+This project parse and execute test cases written in JSON format using C++.  
 ### Features
 - Load test cases from a JSON file
 - Parse and extract structured input/output
