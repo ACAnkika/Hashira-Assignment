@@ -1,0 +1,97 @@
+Polynomial Construction from Roots – Documentation
+Problem Context
+
+We are given inputs in JSON format, where each entry specifies a base and a value.
+The values represent roots of a polynomial.
+The task is to:
+
+Convert each value from its given base to decimal.
+
+Construct the polynomial whose roots are these converted values.
+
+Output the coefficients of the polynomial.
+
+Approach
+
+Read Input (JSON File)
+
+Each test case is stored in a JSON file.
+
+The file contains two keys:
+
+"n": number of available values.
+
+"k": number of values to be used.
+
+Each root is represented as { "base": string, "value": string }.
+
+Base Conversion
+
+Values are given in different bases (e.g., base 2, base 16).
+
+We convert these values into decimal integers.
+
+For example: "101" in base 2 becomes 5.
+
+Polynomial Representation
+
+Start with a polynomial initialized as P(x) = 1.
+
+For each root r, multiply the current polynomial with (x - r).
+
+This is done iteratively until all roots are added.
+
+Polynomial Multiplication
+
+If the current polynomial is represented as coefficients a0, a1, …, an,
+multiplying with (x - r) shifts coefficients and subtracts r * ai.
+
+This ensures that all roots are included step by step.
+
+Output
+
+The final polynomial is printed as a list of coefficients.
+
+Coefficients are shown in descending degree order.
+
+Code Explanation
+
+convertToDecimal
+
+Takes a string and its base.
+
+Converts the string into an integer in base 10.
+
+multiplyPoly
+
+Multiplies the current polynomial with (x - root).
+
+Returns the new set of coefficients.
+
+solvePolynomial
+
+Reads JSON input.
+
+Extracts roots.
+
+Converts roots to decimal.
+
+Builds polynomial step by step.
+
+Prints coefficients.
+
+main
+
+Calls solvePolynomial for both test_case_1.json and test_case_2.json.
+
+Thought Process
+
+The problem is about polynomial construction, not just number conversion.
+
+The key step is multiplying factors (x - root) for each root.
+
+Using iterative polynomial multiplication allows handling any number of roots.
+
+JSON input ensures flexible test case management.
+
+The code is designed to handle different bases and produce consistent polynomial coefficients.
